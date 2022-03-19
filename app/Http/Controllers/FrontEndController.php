@@ -23,8 +23,8 @@ class FrontEndController extends Controller
             return view('welcome', compact('doctors', 'formatDate'));
         };
         // Return all doctors available for today to the welcome page
-        //$doctors = Appointment::where('date', date('m-d-Y'))->get();
-        //return view('welcome', compact('doctors'));
+        $doctors = Appointment::where('date', date('m-d-Y'))->get();
+        return view('welcome', compact('doctors'));
     }
 
     public function show($doctorId, $date)
